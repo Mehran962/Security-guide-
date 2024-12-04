@@ -1,0 +1,101 @@
+Creating an HTML file for the provided content
+
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Testing Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #444;
+        }
+        pre {
+            background: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Security Testing Guide for Wild West Coin Game</h1>
+    <p><strong>Important:</strong> Always ensure you have explicit permission to perform security tests.</p>
+    <h2>Step 1: Reconnaissance</h2>
+    <h3>Information Gathering</h3>
+    <ul>
+        <li>Identify the Game: Understand the game's mechanics, features, and technologies used.</li>
+        <li>Documentation: Look for any publicly available documentation or API references.</li>
+    </ul>
+    <h3>Network Mapping</h3>
+    <pre><code>nmap -sS -p- target_ip</code></pre>
+    <h3>Web Application Analysis</h3>
+    <ul>
+        <li>Use tools like Burp Suite or OWASP ZAP to analyze the web application for vulnerabilities.</li>
+        <li>Intercept requests, capture, and analyze HTTP/HTTPS traffic.</li>
+        <li>Spider the site to find hidden directories and files.</li>
+    </ul>
+    <h2>Step 2: Vulnerability Scanning</h2>
+    <h3>Static Analysis</h3>
+    <pre><code>nikto -h http://target_url</code></pre>
+    <h3>Dynamic Analysis</h3>
+    <ul>
+        <li>Use Burp Suite Intruder to test for common vulnerabilities like SQL injection and XSS.</li>
+        <li>Fuzzing: Use tools to find unexpected behaviors.</li>
+    </ul>
+    <h2>Step 3: Exploitation</h2>
+    <h3>SQL Injection</h3>
+    <pre><code>' OR '1'='1</code></pre>
+    <h3>Cross-Site Scripting (XSS)</h3>
+    <pre><code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code></pre>
+    <h3>Cross-Site Request Forgery (CSRF)</h3>
+    <p>Use tools like csrf-tester to check for CSRF vulnerabilities.</p>
+    <h2>Step 4: Post-Exploitation</h2>
+    <ul>
+        <li>Data Exfiltration: Attempt to extract sensitive data.</li>
+        <li>Privilege Escalation: Try to gain higher access levels.</li>
+    </ul>
+    <h2>Step 5: Reporting</h2>
+    <ul>
+        <li>Document all vulnerabilities found, their impact, and remediation steps.</li>
+        <li>Share the report with stakeholders.</li>
+    </ul>
+    <h3>Tools</h3>
+    <ul>
+        <li>Burp Suite</li>
+        <li>Nmap</li>
+        <li>Nikto</li>
+        <li>OWASP ZAP</li>
+        <li>Metasploit</li>
+    </ul>
+</body>
+</html>
+"""
+
+# Save the HTML content to a file
+file_path = "/mnt/data/Security_Testing_Guide.html"
+with open(file_path, "w") as file:
+    file.write(html_content)
+
+file_path
